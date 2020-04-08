@@ -4,13 +4,13 @@ public class Libro {
     private String titulo;
     private float precio;
     private short stock;
-    private Autor autor;
+    private Autor[] autores;
 
-    public Libro(String titulo, Autor autor, short stock, float precio) {
+    public Libro(String titulo, Autor[] autores, short stock, float precio) {
         setTitulo(titulo);
         setPrecio(precio);
         setStock(stock);
-        setAutor(autor);
+        setAutores(autores);
     }
 
     public String getTitulo() {
@@ -37,17 +37,18 @@ public class Libro {
         this.stock = stock;
     }
 
-    public Autor getAutor() {
-        return autor;
+    public Autor[] getAutores() {
+        return autores;
     }
 
-    public void setAutor(Autor autor) {
-        this.autor = autor;
+    public void setAutores(Autor[] autores) {
+        this.autores = autores;
     }
 
     public void mostrarLibro() {
         System.out.println("Libro[titulo=" + getTitulo()
-                + ", autor=" + getAutor().getNombre() + ' ' + getAutor().getApellido()
+                + ", autor=" + getAutores()[0].getNombre() + ' ' + getAutores()[0].getApellido()
+                + ", colaborador=" + getAutores()[1].getNombre() + ' ' + getAutores()[1].getApellido()
                 + ", stock=" + getStock()
                 + ", precio=" + getPrecio() + "]");
     }
@@ -58,7 +59,7 @@ public class Libro {
 
     public void mensajeComercial() {
         System.out.println("El libro, " + getTitulo()
-                + " de " + getAutor().getNombre() + ' ' + getAutor().getApellido()
+                + " de " + getAutores()[0].getNombre() + ' ' + getAutores()[0].getApellido()
                 + ". Se vende a " + getPrecio() + " pesos.");
     }
 }
