@@ -3,7 +3,9 @@ package com.utn;
 public class Main {
 
     public static void main(String[] args) {
-        ejercicio1();
+        //ejercicio1();
+        ejercicio2();
+
     }
 
     public static void ejercicio1() {
@@ -29,6 +31,20 @@ public class Main {
         //g. Agregue un método a la clase Libro que posibilite imprimir en pantalla el
         //siguiente mensaje: “El libro, {título} de {nombre del autor}. Se vende a {precio} pesos.”
         libro1.mensajeComercial();
+    }
+
+    public static void ejercicio2() {
+        var cliente1 = new Cliente("Pepe", "pepe@grillo.com", (byte)15);
+        System.out.println(cliente1.toString());
+
+        var batidora = new ItemVenta(1, "Batidora", 2, 450);
+        var bowl = new ItemVenta(2, "Bowl", 1, 100);
+        ItemVenta[] items = {batidora, bowl};
+        var factura1 = new Factura(cliente1, 1000, items);
+        System.out.println("El monto total es: " + factura1.getMonto());
+        System.out.println(factura1.toString());
+
+
     }
 
 }
